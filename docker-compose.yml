@@ -1,0 +1,16 @@
+version: "3.5"
+
+networks: 
+  app-network:
+    driver: bridge
+
+services:
+  recicla_facil:
+    container_name: 'recicla_facil'
+    build: .
+    ports: 
+      - "3000:3000"
+    volumes:
+      - .:/var/www
+    networks: 
+      - app-network
