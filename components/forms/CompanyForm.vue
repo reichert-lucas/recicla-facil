@@ -131,7 +131,7 @@ const category = ref(1)
 const save = handleSubmit(values => {
     const payload = {
         ...{
-            category: type.value === 2 ? Number(category.value) : null,
+            category: type.value == 2 ? Number(category.value) : null,
             type: Number(type.value),
         },
         ...values
@@ -141,6 +141,9 @@ const save = handleSubmit(values => {
         .then(() => {
             toast().success('Conta criada com sucesso!')
             handleReset()
+
+            const router = useRouter()
+            router.push('/aplicativo')
         })
         .catch(error => {
             toast().error(getMessageError(error))
