@@ -13,7 +13,7 @@
             <div v-for="company in companies" class="collectors__list__item">
                 <div class="collectors__list__item__title">{{ company.name }}</div>
 
-                <span class="collectors__list__item__rating">✪ {{ getRandomAverage() }}</span>
+                <span class="collectors__list__item__rating">✪ {{ company.rating }}</span>
             </div>
         </div>
     </v-container>
@@ -52,11 +52,6 @@ export default {
             })
             .finally(() => this.loading = false)
         },
-
-        getRandomAverage() {
-            const average = (Math.random() * 4 + 1).toFixed(1);
-            return parseFloat(average);
-        }
     },
 
     created() {
