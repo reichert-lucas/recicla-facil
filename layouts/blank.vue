@@ -2,7 +2,7 @@
   <v-app theme="light">
     <v-layout>
       <v-main>
-        <header>
+        <header :style="`height: ${useRoute().name === 'index' ? '100vh' : 'auto'}`">
             <v-icon 
               style="font-size:120px;"
               icon="mdi-recycle"
